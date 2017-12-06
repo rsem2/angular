@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}!
+  </h1>
+
+  <button [ngClass]="{ 'on': switch }" (click)="onButtonClick('PST')">PST</button>
+  <button [ngClass]="{ 'on': switch }" (click)="onButtonClick('MST')">MST</button>
+  <button [ngClass]="{ 'on': switch }" (click)="onButtonClick('CST')">CST</button>
+  <button [ngClass]="{ 'on': switch }" (click)="onButtonClick('EST')">EST</button>
+  <button [ngClass]="{ 'on': switch }" (click)="onButtonClick('GMT')">GMT</button>
+  <button [ngClass]="{ 'on': switch }" (click)="clear()">Clear</button>
+
+  <p>{{ date | date: format : location }}</p>
+
