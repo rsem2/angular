@@ -4,12 +4,13 @@
     {{ title }}!
   </h1>
 
-  <button [ngClass]="{ 'on': switch }" (click)="onButtonClick('PST')">PST</button>
-  <button [ngClass]="{ 'on': switch }" (click)="onButtonClick('MST')">MST</button>
-  <button [ngClass]="{ 'on': switch }" (click)="onButtonClick('CST')">CST</button>
-  <button [ngClass]="{ 'on': switch }" (click)="onButtonClick('EST')">EST</button>
-  <button [ngClass]="{ 'on': switch }" (click)="onButtonClick('GMT')">GMT</button>
-  <button [ngClass]="{ 'on': switch }" (click)="clear()">Clear</button>
+  <button [ngClass]="{ 'on': selected === 'PST' }" (click)="onButtonClick('PST')">PST</button>
+  <button [ngClass]="{ 'on': selected === 'MST' }" (click)="onButtonClick('MST')">MST</button>
+  <button [ngClass]="{ 'on': selected === 'CST' }" (click)="onButtonClick('CST')">CST</button>
+  <button [ngClass]="{ 'on': selected === 'EST' }" (click)="onButtonClick('EST')">EST</button>
+  <button [ngClass]="{ 'on': selected === 'GMT' }" (click)="onButtonClick('GMT')">GMT</button>
+  <button (click)="onButtonClick(null)">Clear</button>
 
-  <p>{{ date | date: format : location }}</p>
+  
+  <p *ngIf='selected!=null'>{{ date | date: format : location }}</p>
 
