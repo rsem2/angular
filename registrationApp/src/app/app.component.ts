@@ -20,4 +20,11 @@ export class AppComponent {
     state: '',
     luck: null,
   }
+
+  onSubmit(valid){
+    var errors = [];
+
+    console.log(valid)
+    console.log('submitted')
+  }
 }
