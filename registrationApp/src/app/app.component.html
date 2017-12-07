@@ -1,0 +1,36 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <form name="user">
+    <p>*First name<input type="text" name="firstName" required minlength="3" maxlength="20" [(ngModel)]="user.firstName" #firstName="ngModel">
+      <span class="red" *ngIf="firstName.errors.required">First name is required</span>
+      <span class="red" *ngIf="firstName.errors.minlength">First name must have a minimum length of 3</span>
+    </p>
+    <p>*Last name<input type="text" name="lastName" required minlength="3" maxlength="20" [(ngModel)]="user.lastName" #lastName="ngModel">
+      <span class="red" *ngIf="lastName.errors.required">Last name is required</span>
+      <span class="red" *ngIf="lastName.errors.minlength">Last name must have a minimum length of 3</span>
+    </p>
+    <p>*Email<input type="email" name="email" required minlength="3" maxlength="20" pattern="[a-zA-Z ]*" [(ngModel)]="user.email" #email="ngModel">
+      <span class="red" *ngIf="email.errors.required">Email is required</span>
+      {{ email.errors | json }}
+    </p>
+    <p>*Password<input type="password" name="password" required minlength="3" maxlength="20" [(ngModel)]="user.password" #password="ngModel">{{ password.errors | json }}</p>
+    <p>*Password confirmation<input type="password" name="cpassword" required minlength="3" maxlength="20" [(ngModel)]="user.cpassword" #cpassword="ngModel">{{ cpassword.errors | json }}</p>
+    <p>*Street address<input type="text" name="street" required minlength="3" maxlength="20" [(ngModel)]="user.street" #street="ngModel">{{ street.errors | json }}</p>
+    <p>Unit/Apt #<input type="text" name="unit" required minlength="3" maxlength="20" [(ngModel)]="user.unit" #unit="ngModel"></p>
+    <p>*City<input type="text" name="city" required minlength="3" maxlength="20" [(ngModel)]="user.city" #city="ngModel">{{ city.errors | json }}</p>
+    <p>*State<select name=state>
+      <option value="WA">Washington</option>
+      <option value="FL">Florida</option>
+      <option value="NY">New York</option>
+      <option value="TX">Texas</option>
+    </select>{{ state.errors | json }}</p>
+    <p>*I'm feeling lucky</p>
+    <input type="radio" name="luck" value="yes" checked>Yes<br>
+    <input type="radio" name="luck" value="no">No<br>
+    {{ luck.errors | json }}
+    <input type="submit" value="Register">
+  </form>
+
