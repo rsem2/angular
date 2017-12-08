@@ -17,10 +17,9 @@ export class AppComponent {
       content: ""
     }
   }
-  onSubmit(){
-    console.log(this.quote)
-    
-    console.log('submitted')
-  }
+  // onSubmit(){
+  //   console.log(this.quote)
+  //   console.log('submitted')
+  // }
 
 }

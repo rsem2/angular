@@ -5,7 +5,7 @@ import { Component, OnInit, Input, OnChanges, Output } from '@angular/core';
   templateUrl: './quote-child.component.html',
   styleUrls: ['./quote-child.component.css']
 })
-export class QuoteChildComponent implements OnInit, OnChanges {
+export class QuoteChildComponent implements OnInit {
   @Input() quote
   
   ngOnInit() {
@@ -13,9 +13,9 @@ export class QuoteChildComponent implements OnInit, OnChanges {
 
   constructor() { }
 
-  ngOnChanges(){
-    this.quote = this.quote
-    console.log("child",this.quote)
+  onSubmit(){
+    console.log(this.quote)
+    console.log('submitted')
   }
 
 }
