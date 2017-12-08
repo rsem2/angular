@@ -5,17 +5,18 @@
     Welcome to {{ title }}!
   </h1>
 
-  <form (submit)="onSubmit()">
-    <input type="number" min="0" max="100" name="value" [(ngModel)]="power.value">
+  <form (submit)="onSubmit(val)">
+    <input type="number" min="0" max="100" name="val" [(ngModel)]="val">
     <input type="submit" value="Calculate Powers">
   </form>
 
-  <app-human-component></app-human-component>
+  <app-human-component [power]="power" ></app-human-component>
   <app-saiyan-component></app-saiyan-component>
   <app-super-saiyan-component></app-super-saiyan-component>
   <app-super-saiyan-two-component></app-super-saiyan-two-component>
   <app-super-saiyan-three-component></app-super-saiyan-three-component>
   <app-super-saiyan-four-component></app-super-saiyan-four-component>
+
 
 
 

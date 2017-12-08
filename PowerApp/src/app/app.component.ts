@@ -7,12 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  power
+  power: number
 
   constructor(){
-    this.power = {value: ''};
   }
-  onSubmit(){
+  onSubmit(val: number){
+    console.log(val)
+    this.power = val
     console.log(this.power)
   }
 }
