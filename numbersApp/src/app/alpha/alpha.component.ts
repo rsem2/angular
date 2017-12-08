@@ -16,11 +16,8 @@ export class AlphaComponent implements OnInit {
   }
 
   onClick(){
-    this.numbers.push(this._myService.addNumber())
+    this.numbers.push(this._myService.addNumber(1))
     console.log(this.numbers)
   }
 
-  toTransfer() {
-    this._myService.getData(this.numbers);
-  }
 }

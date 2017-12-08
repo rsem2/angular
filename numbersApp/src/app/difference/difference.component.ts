@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MyServiceService } from './../my-service.service'
 
 @Component({
   selector: 'app-difference',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./difference.component.css']
 })
 export class DifferenceComponent implements OnInit {
-
-  constructor() { }
+  difference: number;
+  constructor(private _myService: MyServiceService) {
+    
+   }
 
   ngOnInit() {
   }
 
+  onClick(){
+    this.difference = this._myService.calcDifference();
+  }
 }

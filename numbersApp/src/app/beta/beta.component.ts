@@ -17,8 +17,8 @@ export class BetaComponent implements OnInit {
   }
 
   onClick(){
-    this.numbers.push(this._myService.addNumber())
+    this.numbers.push(this._myService.addNumber(2))
     console.log(this.numbers)
-
   }
+
 }
