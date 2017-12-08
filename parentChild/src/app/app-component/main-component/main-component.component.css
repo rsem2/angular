@@ -1,0 +1,9 @@
+div{
+    background-color: lightblue;
+    width: 560px;
+    height: 750px;
+    display: inline-block;
+    border: black 2px solid;
+    margin: 20px;
+    vertical-align: top;
+}
