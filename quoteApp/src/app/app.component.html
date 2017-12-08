@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Add a quote!
+  </h1>
+  <form name="quote" #quoteForm="ngForm" (submit)="onSubmit()">
+    <p><textarea rows="5" cols="30" name="content" [(ngModel)]="quote.content" #content="ngModel"></textarea></p>
+    <p>Author: <input type="text" name="author" [(ngModel)]="quote.author" #author="ngModel"></p>
+    <p><input type="submit" value="Add a quote"></p>
+  </form>
+</div>
+
+<app-quote-child [quote]='quote'></app-quote-child>
+
+
+

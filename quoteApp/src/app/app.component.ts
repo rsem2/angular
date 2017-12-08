@@ -6,12 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  power: number
+  quote: {
+    author: string, 
+    content: string,
+  }
 
   constructor(){
+    this.quote = {
+      author: "",
+      content: ""
+    }
   }
-  onSubmit(val: number){
-    this.power = val
+  onSubmit(){
+    console.log(this.quote)
+    
+    console.log('submitted')
   }
+
 }
