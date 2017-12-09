@@ -8,12 +8,9 @@ export class MyServiceService {
     this.gold = 0;
   }
 
-  makeGold(x:number){
-    this.gold += (x)
+  makeGold(x:number, y:number){
+    return Math.floor((Math.random() * (x-y))+y)
   }
 
-  totalGold(){
-    return this.gold
-  }
 
 }

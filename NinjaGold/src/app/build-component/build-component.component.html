@@ -1,5 +1,23 @@
-<div>
+<div class = "buildings">
   <h1>Farm</h1>
   <p>Earn 2 - 5 gold</p>
-  <button (click)="onClick(2,5)">Farm!</button>
+  <button (click)="onClick(2,5,'farm')">Farm!</button>
+</div>
+
+<div class = "buildings">
+  <h1>Cave</h1>
+  <p>Earn 5 - 10 gold</p>
+  <button (click)="onClick(5,10,'cave')">Cave!</button>
+</div>
+
+<div class = "buildings">
+  <h1>Casino</h1>
+  <p>Earn up to or lose up to 100 gold</p>
+  <button (click)="onClick(-100,100,'casino')">Casino!</button>
+</div>
+
+<div class = "buildings">
+  <h1>House</h1>
+  <p>Earn 7 - 15 gold</p>
+  <button (click)="onClick(7,15,'house')">House!</button>
 </div>

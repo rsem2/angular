@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MyServiceService } from './../my-service.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { MyServiceService } from './../my-service.service';
 })
 export class BuildComponentComponent implements OnInit {
 
+  @Output() aTaskEventEmitter = new EventEmitter();
+
   constructor(private _myService: MyServiceService) {
 
    }
@@ -15,9 +17,9 @@ export class BuildComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick(x:number,y:number){
-    console.log(Math.floor((Math.random() * (x-y))+y))
-    this._myService.makeGold(Math.floor((Math.random() * (x-y))+y))
+  onClick(x:number,y:number,place:string){
+    let temp = this._myService.makeGold(x,y)
+    this.aTaskEventEmitter.emit({gold: temp, place: place});
   }
 
 }

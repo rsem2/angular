@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-log-component',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogComponentComponent implements OnInit {
 
+  @Input() myLog;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  
 
 }

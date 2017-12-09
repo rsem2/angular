@@ -2,5 +2,5 @@
 <div style="text-align:center">
   <h1>Gold: {{ gold }}</h1>
 
-  <app-build-component></app-build-component>  
-
+  <app-build-component (aTaskEventEmitter)="dataFromChild($event)"></app-build-component>  
+  <app-log-component [myLog]='log'></app-log-component>
