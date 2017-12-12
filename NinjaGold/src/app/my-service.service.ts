@@ -12,5 +12,4 @@ export class MyServiceService {
     return Math.floor((Math.random() * (x-y))+y)
   }
 
-
 }
