@@ -1,13 +1,29 @@
 <div style="text-align:center">
+  <router-outlet></router-outlet>
+  
+<div *ngIf="(name)">
   <h1>
-    Welcome to {{ title }}!
+    Weather App!
   </h1>
   
-  <a [routerLink]="['seattle']">Seattle</a>
-  <a [routerLink]="['sanjose']">San Jose</a>
-  <a [routerLink]="['burbank']">Burbank</a>
-  <a [routerLink]="['dallas']">Dallas</a>
-  <a [routerLink]="['dc']">Washington DC</a>
-  <a [routerLink]="['chicago']">Chicago</a>
+  <a [routerLink]="['/seattle']">Seattle</a>
+  <a [routerLink]="['/sanjose']">San Jose</a>
+  <a [routerLink]="['/burbank']">Burbank</a>
+  <a [routerLink]="['/dallas']">Dallas</a>
+  <a [routerLink]="['/washington']">Washington DC</a>
+  <a [routerLink]="['/chicago']">Chicago</a>
 
-  <router-outlet></router-outlet>
+  <div>
+    <h1>Location: {{ name }}</h1>
+    <h3>Weather: {{ desc }}</h3>
+    <p>Humidity: {{ humidity }}</p>
+    <p>Temperature (average): {{temp | number : '1.1-1'}} C</p>
+    <p>Temperature (high): {{ tempmax | number : '1.1-1'}} C</p>
+    <p>Temperature (min): {{ tempmin | number : '1.1-1'}} C</p>
+  </div>
+    <img *ngIf="name=='Chicago'" src='https://static.pexels.com/photos/167200/pexels-photo-167200.jpeg'>  
+    <img *ngIf="name=='Seattle'" src='https://static.pexels.com/photos/656195/pexels-photo-656195.jpeg'>
+    <img *ngIf="name=='Burbank'" src='https://static.pexels.com/photos/237325/pexels-photo-237325.jpeg'>
+    <img *ngIf="name=='Dallas'" src='https://static.pexels.com/photos/280193/pexels-photo-280193.jpeg'>
+</div>
+  
